@@ -1,0 +1,12 @@
+
+> bright-school-college@1.0.0 dev
+> next dev --port 3020
+
+   ▲ Next.js 15.5.19
+   - Local:        http://localhost:3020
+   - Network:      http://192.168.68.84:3020
+
+ ✓ Starting...
+ ✓ Ready in 2.6s
+ ○ Compiling /about/governing-body ...
+ ✓ Compiled /about/governing-body in 3.9s (974 modules)
