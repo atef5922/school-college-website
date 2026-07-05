@@ -34,7 +34,9 @@ export function ProgramCard({ program }: { program: Program }) {
           ))}
         </div>
         <Button asChild variant="outline" className="mt-5">
-          <Link href="/academics/programs">Learn More</Link>
+          <Link href={`/academics/programs#details-${program.id}`} aria-label={`Learn more about ${program.title}`}>
+            Learn More
+          </Link>
         </Button>
       </div>
     </Card>

@@ -8,48 +8,26 @@
 
  ✓ Starting...
  ✓ Ready in 2.4s
- ○ Compiling / ...
- ✓ Compiled / in 9s (1911 modules)
- ✓ Compiled in 1776ms (814 modules)
- ✓ Compiled in 113ms (800 modules)
- GET / 200 in 11092ms
- ○ Compiling /gallery ...
- ✓ Compiled /gallery in 1356ms (1855 modules)
- GET /gallery 200 in 1839ms
- GET / 200 in 726ms
- ✓ Compiled /contact in 279ms (1860 modules)
- GET /contact 200 in 728ms
- GET /gallery 200 in 51ms
- GET / 200 in 150ms
- GET / 200 in 131ms
- ○ Compiling /academics/programs ...
- ✓ Compiled /academics/programs in 2.2s (1865 modules)
- GET /academics/programs 200 in 2406ms
- GET /academics/programs 200 in 65ms
- GET /academics/programs 200 in 60ms
- GET /academics/programs 200 in 64ms
- GET / 200 in 168ms
- GET /academics/programs 200 in 62ms
+ ○ Compiling /api/downloads/[id] ...
+ ✓ Compiled /api/downloads/[id] in 1325ms (285 modules)
+ GET /api/downloads/class-routine 200 in 2021ms
+ GET /api/downloads/exam-routine 200 in 22ms
  ○ Compiling /academics/routine ...
- ✓ Compiled /academics/routine in 561ms (1878 modules)
- GET /academics/routine 200 in 762ms
- GET /academics/routine 200 in 70ms
- GET /academics/programs 200 in 76ms
- ✓ Compiled /academics/exam-routine in 501ms (1880 modules)
- ✓ Compiled in 400ms (819 modules)
- GET /academics/exam-routine 200 in 928ms
- GET /academics/exam-routine 200 in 70ms
- GET /academics/exam-routine 200 in 63ms
- ○ Compiling /academics/syllabus ...
- ✓ Compiled /academics/syllabus in 570ms (1882 modules)
- GET /academics/syllabus 200 in 702ms
- GET /academics/syllabus 200 in 76ms
- ○ Compiling /academics/results ...
- ✓ Compiled /academics/results in 947ms (1416 modules)
- GET /academics/results 200 in 1080ms
- GET /academics/results 200 in 64ms
- ○ Compiling /academics/calendar ...
- ✓ Compiled /academics/calendar in 528ms (1418 modules)
- GET /academics/calendar 200 in 665ms
- GET /academics/calendar 200 in 71ms
- GET /academics/programs 200 in 86ms
+ ✓ Compiled /academics/routine in 6.9s (949 modules)
+ GET /academics/routine 200 in 7524ms
+ ✓ Compiled in 1112ms (357 modules)
+ ○ Compiling /academics/exam-routine ...
+ ✓ Compiled /academics/exam-routine in 1042ms (880 modules)
+ GET /academics/exam-routine 200 in 1556ms
+ ○ Compiling / ...
+ ✓ Compiled /academics/programs in 3.7s (1868 modules)
+ GET /academics/programs 200 in 3892ms
+ GET / 200 in 4773ms
+ GET / 200 in 40ms
+ GET /academics/exam-routine 200 in 2463ms
+ GET / 200 in 123ms
+ ○ Compiling /admission ...
+ ✓ Compiled /admission in 695ms (1873 modules)
+ GET /admission 200 in 907ms
+ GET /academics/routine 200 in 65ms
+ GET /api/downloads/class-routine 200 in 43ms

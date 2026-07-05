@@ -23,7 +23,7 @@ export const faqs: FAQItem[] = [
     id: "routine-download",
     question: "Where can students find class and exam routines?",
     answer:
-      "Routines are available under Academics and Downloads. PDF download placeholders are ready for future upload management."
+      "Routines are available under Academics and Downloads, with PDF downloads available for class and exam schedules."
   },
   {
     id: "transport",

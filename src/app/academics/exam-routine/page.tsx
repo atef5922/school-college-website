@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { Download } from "lucide-react";
+import { examRoutine } from "@/data/routines";
 import { pageMetadata } from "@/lib/seo";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -7,13 +9,6 @@ import { Container } from "@/components/shared/Container";
 import { PageHero } from "@/components/shared/PageHero";
 
 export const metadata: Metadata = pageMetadata("Exam Routine");
-
-const exams = [
-  ["20 Jun", "English 1st Paper", "10:00 AM - 1:00 PM", "Room 301"],
-  ["23 Jun", "Mathematics", "10:00 AM - 1:00 PM", "Room 301"],
-  ["26 Jun", "Science", "10:00 AM - 1:00 PM", "Science Block"],
-  ["29 Jun", "ICT Practical", "11:00 AM - 1:00 PM", "ICT Lab"]
-];
 
 export default function ExamRoutinePage() {
   return (
@@ -36,7 +31,12 @@ export default function ExamRoutinePage() {
                 <option>Class X</option>
                 <option>Class XI</option>
               </Select>
-              <Button type="button" variant="gold">Download PDF</Button>
+              <Button asChild variant="gold">
+                <a href="/api/downloads/exam-routine" download>
+                  <Download className="h-4 w-4" />
+                  Download PDF
+                </a>
+              </Button>
             </div>
             <div className="mt-6 overflow-x-auto">
               <table className="w-full min-w-[680px] border-collapse text-left text-sm">
@@ -48,7 +48,7 @@ export default function ExamRoutinePage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {exams.map((row) => (
+                  {examRoutine.map((row) => (
                     <tr key={row[0] + row[1]} className="border-b border-slate-200">
                       {row.map((cell) => (
                         <td key={cell} className="px-4 py-3 text-slate-700">{cell}</td>

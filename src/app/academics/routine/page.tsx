@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { Download } from "lucide-react";
+import { classRoutine } from "@/data/routines";
 import { pageMetadata } from "@/lib/seo";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -7,14 +9,6 @@ import { Container } from "@/components/shared/Container";
 import { PageHero } from "@/components/shared/PageHero";
 
 export const metadata: Metadata = pageMetadata("Class Routine");
-
-const routine = [
-  ["Sunday", "English", "Mathematics", "Science", "ICT", "Bangladesh Studies"],
-  ["Monday", "Bangla", "Mathematics", "English", "Physical Education", "Library"],
-  ["Tuesday", "Science", "Higher Math", "English", "Religion", "Club Hour"],
-  ["Wednesday", "Bangla", "ICT", "Mathematics", "Social Science", "Art"],
-  ["Thursday", "English", "Science Lab", "Mathematics", "Assessment", "Assembly"]
-];
 
 export default function RoutinePage() {
   return (
@@ -37,7 +31,12 @@ export default function RoutinePage() {
                 <option>Section A</option>
                 <option>Section B</option>
               </Select>
-              <Button type="button" variant="gold">Download PDF</Button>
+              <Button asChild variant="gold">
+                <a href="/api/downloads/class-routine" download>
+                  <Download className="h-4 w-4" />
+                  Download PDF
+                </a>
+              </Button>
             </div>
             <div className="mt-6 overflow-x-auto">
               <table className="w-full min-w-[760px] border-collapse text-left text-sm">
@@ -49,7 +48,7 @@ export default function RoutinePage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {routine.map((row) => (
+                  {classRoutine.map((row) => (
                     <tr key={row[0]} className="border-b border-slate-200">
                       {row.map((cell) => (
                         <td key={cell} className="px-4 py-3 text-slate-700">{cell}</td>
@@ -61,7 +60,7 @@ export default function RoutinePage() {
             </div>
           </Card>
           <div className="mt-6 grid gap-4 md:hidden">
-            {routine.map((row) => (
+            {classRoutine.map((row) => (
               <Card key={row[0]} className="p-4">
                 <h2 className="font-display text-lg font-extrabold text-navy-900">{row[0]}</h2>
                 <p className="mt-2 text-sm leading-6 text-slate-600">{row.slice(1).join(", ")}</p>

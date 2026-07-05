@@ -18,9 +18,11 @@ export function DownloadCard({ item }: { item: DownloadItem }) {
       <p className="mt-4 text-xs font-bold uppercase tracking-[0.16em] text-slate-500">
         {item.category} - {item.size}
       </p>
-      <Button type="button" variant="outline" className="mt-5 w-full">
-        <Download className="h-4 w-4" />
-        Download
+      <Button asChild variant="outline" className="mt-5 w-full">
+        <a href={`/api/downloads/${item.id}`} download>
+          <Download className="h-4 w-4" />
+          Download
+        </a>
       </Button>
     </Card>
   );

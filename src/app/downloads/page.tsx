@@ -21,7 +21,7 @@ export default function DownloadsPage() {
           <SectionHeader
             eyebrow="Resources"
             title="Download Center"
-            description="All download buttons are placeholders ready for file upload and management from the backend."
+            description="Download official forms, routines, calendars, guidelines, and academic documents in PDF format."
           />
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {downloads.map((item) => (
