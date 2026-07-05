@@ -72,9 +72,9 @@ export const educationalOrganizationJsonLd = {
   slogan: siteInfo.tagline,
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Dhanmondi",
+    streetAddress: "3rd Floor, 36-37 Umesh Datta Road, Bakshibazar",
     addressLocality: "Dhaka",
-    postalCode: "1205",
+    postalCode: "1211",
     addressCountry: "BD"
   },
   telephone: siteInfo.phone,

@@ -65,24 +65,26 @@ export function GalleryGrid({ items }: { items: GalleryItem[] }) {
       </div>
       <Dialog.Root open={Boolean(selected)} onOpenChange={(open) => !open && setSelected(null)}>
         <Dialog.Portal>
-          <Dialog.Overlay className="fixed inset-0 z-[70] bg-navy-950/80 backdrop-blur-sm" />
-          <Dialog.Content className="fixed left-1/2 top-1/2 z-[80] w-[calc(100%-2rem)] max-w-5xl -translate-x-1/2 -translate-y-1/2 rounded-lg bg-white p-3 shadow-premium">
+          <Dialog.Overlay className="fixed inset-0 z-[70] bg-navy-950/85 backdrop-blur-sm" />
+          <Dialog.Content className="fixed left-1/2 top-1/2 z-[80] max-h-[calc(100dvh-1rem)] w-[calc(100vw-1rem)] max-w-5xl -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-lg bg-white p-2 shadow-premium outline-none sm:max-h-[calc(100dvh-2rem)] sm:w-[calc(100vw-2rem)] sm:p-3">
             {selected ? (
-              <div>
+              <div className="min-h-0">
                 <Dialog.Title className="sr-only">{selected.title}</Dialog.Title>
-                <div className="relative aspect-[16/10] overflow-hidden rounded-md">
-                  <Image src={selected.image} alt={selected.alt} fill className="object-cover" sizes="100vw" />
+                <div className="relative h-[58dvh] min-h-[220px] overflow-hidden rounded-md bg-navy-950 sm:h-[68dvh] sm:max-h-[680px]">
+                  <Image src={selected.image} alt={selected.alt} fill className="object-contain" sizes="100vw" />
                 </div>
-                <div className="p-3">
+                <div className="px-2 py-3 sm:p-3">
                   <p className="text-xs font-bold uppercase tracking-[0.18em] text-gold-600">
                     {selected.category}
                   </p>
-                  <p className="mt-1 font-display text-xl font-extrabold text-navy-900">{selected.title}</p>
+                  <p className="mt-1 break-words font-display text-lg font-extrabold leading-tight text-navy-900 sm:text-xl">
+                    {selected.title}
+                  </p>
                 </div>
               </div>
             ) : null}
             <Dialog.Close asChild>
-              <Button variant="gold" size="icon" className="absolute right-5 top-5" aria-label="Close image">
+              <Button variant="gold" size="icon" className="absolute right-3 top-3 shadow-premium sm:right-5 sm:top-5" aria-label="Close image">
                 <X className="h-5 w-5" />
               </Button>
             </Dialog.Close>

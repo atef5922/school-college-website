@@ -73,21 +73,21 @@ export function Footer() {
             Contact Info
           </h2>
           <div className="space-y-4 text-sm text-white/70">
-            <p className="flex gap-3">
+            <p className="flex min-w-0 gap-3">
               <MapPin className="h-5 w-5 flex-none text-gold-300" />
-              {siteInfo.location}
+              <span className="min-w-0 break-words">{siteInfo.location}</span>
             </p>
-            <p className="flex gap-3">
+            <p className="flex min-w-0 gap-3">
               <Phone className="h-5 w-5 flex-none text-gold-300" />
-              {siteInfo.phone}
+              <span className="min-w-0 break-words">{siteInfo.phone}</span>
             </p>
-            <p className="flex gap-3">
+            <p className="flex min-w-0 gap-3">
               <Mail className="h-5 w-5 flex-none text-gold-300" />
-              {siteInfo.email}
+              <span className="min-w-0 break-words">{siteInfo.email}</span>
             </p>
-            <p className="flex gap-3">
+            <p className="flex min-w-0 gap-3">
               <Clock className="h-5 w-5 flex-none text-gold-300" />
-              {siteInfo.officeTime}
+              <span className="min-w-0 break-words">{siteInfo.officeTime}</span>
             </p>
           </div>
         </div>

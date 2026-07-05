@@ -7,13 +7,49 @@
    - Network:      http://192.168.68.87:3000
 
  ✓ Starting...
- ✓ Ready in 2.6s
+ ✓ Ready in 2.4s
  ○ Compiling / ...
  ✓ Compiled / in 9s (1911 modules)
- GET / 200 in 10151ms
- ✓ Compiled in 1732ms (814 modules)
- ○ Compiling /library ...
- ✓ Compiled /library in 1112ms (1866 modules)
- GET /library 200 in 1584ms
- GET / 200 in 1574ms
- GET / 200 in 633ms
+ ✓ Compiled in 1776ms (814 modules)
+ ✓ Compiled in 113ms (800 modules)
+ GET / 200 in 11092ms
+ ○ Compiling /gallery ...
+ ✓ Compiled /gallery in 1356ms (1855 modules)
+ GET /gallery 200 in 1839ms
+ GET / 200 in 726ms
+ ✓ Compiled /contact in 279ms (1860 modules)
+ GET /contact 200 in 728ms
+ GET /gallery 200 in 51ms
+ GET / 200 in 150ms
+ GET / 200 in 131ms
+ ○ Compiling /academics/programs ...
+ ✓ Compiled /academics/programs in 2.2s (1865 modules)
+ GET /academics/programs 200 in 2406ms
+ GET /academics/programs 200 in 65ms
+ GET /academics/programs 200 in 60ms
+ GET /academics/programs 200 in 64ms
+ GET / 200 in 168ms
+ GET /academics/programs 200 in 62ms
+ ○ Compiling /academics/routine ...
+ ✓ Compiled /academics/routine in 561ms (1878 modules)
+ GET /academics/routine 200 in 762ms
+ GET /academics/routine 200 in 70ms
+ GET /academics/programs 200 in 76ms
+ ✓ Compiled /academics/exam-routine in 501ms (1880 modules)
+ ✓ Compiled in 400ms (819 modules)
+ GET /academics/exam-routine 200 in 928ms
+ GET /academics/exam-routine 200 in 70ms
+ GET /academics/exam-routine 200 in 63ms
+ ○ Compiling /academics/syllabus ...
+ ✓ Compiled /academics/syllabus in 570ms (1882 modules)
+ GET /academics/syllabus 200 in 702ms
+ GET /academics/syllabus 200 in 76ms
+ ○ Compiling /academics/results ...
+ ✓ Compiled /academics/results in 947ms (1416 modules)
+ GET /academics/results 200 in 1080ms
+ GET /academics/results 200 in 64ms
+ ○ Compiling /academics/calendar ...
+ ✓ Compiled /academics/calendar in 528ms (1418 modules)
+ GET /academics/calendar 200 in 665ms
+ GET /academics/calendar 200 in 71ms
+ GET /academics/programs 200 in 86ms

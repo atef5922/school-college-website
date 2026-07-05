@@ -17,28 +17,28 @@ export function HomeContactSection() {
           <div className="space-y-5">
             <Card className="p-5">
               <div className="space-y-4 text-sm text-slate-700">
-                <p className="flex gap-3">
+                <p className="flex min-w-0 gap-3">
                   <MapPin className="h-5 w-5 flex-none text-gold-600" />
-                  {siteInfo.location}
+                  <span className="min-w-0 break-words">{siteInfo.location}</span>
                 </p>
-                <p className="flex gap-3">
+                <p className="flex min-w-0 gap-3">
                   <Phone className="h-5 w-5 flex-none text-gold-600" />
-                  {siteInfo.phone} / {siteInfo.admissionPhone}
+                  <span className="min-w-0 break-words">{siteInfo.phone} / {siteInfo.admissionPhone}</span>
                 </p>
-                <p className="flex gap-3">
+                <p className="flex min-w-0 gap-3">
                   <Mail className="h-5 w-5 flex-none text-gold-600" />
-                  {siteInfo.email}
+                  <span className="min-w-0 break-words">{siteInfo.email}</span>
                 </p>
-                <p className="flex gap-3">
+                <p className="flex min-w-0 gap-3">
                   <Clock className="h-5 w-5 flex-none text-gold-600" />
-                  {siteInfo.officeTime}
+                  <span className="min-w-0 break-words">{siteInfo.officeTime}</span>
                 </p>
               </div>
             </Card>
             <Card className="overflow-hidden">
               <iframe
                 title="Bright School & College map"
-                src="https://www.google.com/maps?q=Dhanmondi%20Dhaka%201205%20Bangladesh&output=embed"
+                src="https://www.google.com/maps?q=3rd%20Floor%2036-37%20Umesh%20Datta%20Road%20Bakshibazar%20Dhaka%201211%20Bangladesh&output=embed"
                 className="h-72 w-full border-0"
                 loading="lazy"
               />

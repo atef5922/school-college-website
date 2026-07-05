@@ -10,7 +10,7 @@ import { SectionHeader } from "@/components/shared/SectionHeader";
 
 export const metadata: Metadata = pageMetadata(
   "About School",
-  "Learn about Bright School & College, a modern school and college in Dhanmondi, Dhaka."
+  "Learn about Bright School & College, a modern school and college in Bakshibazar, Dhaka."
 );
 
 export default function AboutPage() {

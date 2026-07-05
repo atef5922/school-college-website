@@ -3,10 +3,10 @@ import type { SiteInfo } from "@/types";
 export const siteInfo: SiteInfo = {
   name: "Bright School & College",
   tagline: "Building Future Leaders",
-  location: "Dhanmondi, Dhaka 1205, Bangladesh",
-  phone: "+880 2 5501 2345",
-  admissionPhone: "+880 1711 123456",
-  email: "info@bright.edu.bd",
+  location: "3rd Floor, 36-37 Umesh Datta Road, Bakshibazar, Dhaka - 1211, Bangladesh",
+  phone: "+880 1958-645415",
+  admissionPhone: "+880 1958-645415",
+  email: "info@mugneeit.com",
   officeTime: "Mon - Sat: 8:00 AM - 4:00 PM",
   socials: {
     facebook: "https://facebook.com",
