@@ -53,14 +53,14 @@ export function PrincipalMessage() {
               className="group relative overflow-hidden rounded-lg border border-slate-200 bg-white shadow-soft transition duration-300 hover:-translate-y-1 hover:border-gold-300 hover:shadow-premium"
             >
               <div className={`h-1.5 bg-gradient-to-r ${item.accentClass}`} />
-              <div className="grid min-h-[350px] lg:grid-cols-[220px_1fr]">
-                <div className="relative min-h-[220px] overflow-hidden bg-navy-50 lg:min-h-full">
+              <div className="grid min-h-[350px] md:min-h-[400px] md:grid-cols-[280px_1fr] lg:min-h-[350px] lg:grid-cols-[220px_1fr]">
+                <div className="relative min-h-[240px] overflow-hidden bg-navy-50 md:min-h-full">
                   <Image
                     src={item.image}
                     alt={item.name}
                     fill
-                    className="object-cover object-top transition duration-500 group-hover:scale-105"
-                    sizes="(min-width: 1024px) 220px, 100vw"
+                    className="object-cover object-[center_12%] transition duration-500 group-hover:scale-105 md:object-[center_8%] lg:object-top"
+                    sizes="(min-width: 1024px) 220px, (min-width: 768px) 280px, 100vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy-950/45 via-transparent to-transparent" />
                 </div>

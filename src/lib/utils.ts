@@ -5,6 +5,15 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+export function normalizePhoneNumber(phone: string) {
+  const digits = phone.replace(/[^\d]/g, "");
+  return phone.trim().startsWith("+") ? `+${digits}` : digits;
+}
+
+export function getWhatsAppUrl(phone: string) {
+  return `https://wa.me/${normalizePhoneNumber(phone).replace(/^\+/, "")}`;
+}
+
 export function formatDate(date: string) {
   return new Intl.DateTimeFormat("en", {
     day: "2-digit",

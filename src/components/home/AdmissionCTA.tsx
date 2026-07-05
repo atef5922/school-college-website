@@ -3,6 +3,7 @@ import { PhoneCall } from "lucide-react";
 import { siteInfo } from "@/data/site";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/shared/Container";
+import { normalizePhoneNumber } from "@/lib/utils";
 
 export function AdmissionCTA() {
   return (
@@ -27,7 +28,7 @@ export function AdmissionCTA() {
               <Link href="/admission/apply">Apply Now</Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="border-white/30 bg-white/5 text-white hover:bg-white hover:text-navy-900">
-              <a href={`tel:${siteInfo.admissionPhone}`}>Call Admission Office</a>
+              <a href={`tel:${normalizePhoneNumber(siteInfo.admissionPhone)}`}>Call Admission Office</a>
             </Button>
           </div>
         </div>

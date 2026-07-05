@@ -290,7 +290,7 @@ export function MainNavbar() {
       <AutoHideHeader>
         <div className="container flex min-h-[76px] items-center justify-between gap-3 py-2 sm:min-h-[82px] sm:gap-4">
           <HeaderBrand />
-          <div className="hidden flex-none items-center gap-3 md:flex">
+          <div className="hidden flex-none items-center gap-3 xl:flex">
             <Button asChild className="rounded-full bg-sky-500 px-5 text-white shadow-lg shadow-sky-500/25 hover:bg-sky-600">
               <Link href="/admission/apply">
                 <GraduationCap className="h-4 w-4" />
@@ -312,13 +312,18 @@ export function MainNavbar() {
           </div>
           <Dialog.Root open={open} onOpenChange={setOpen}>
             <Dialog.Trigger asChild>
-              <Button variant="gold" size="icon" className="lg:hidden" aria-label="Open menu">
+              <Button
+                variant="gold"
+                className="h-10 px-3 text-sm font-bold shadow-soft sm:h-11 sm:px-4 xl:hidden"
+                aria-label="Open menu"
+              >
                 <Menu className="h-5 w-5" />
+                <span className="hidden md:inline">Menu</span>
               </Button>
             </Dialog.Trigger>
             <Dialog.Portal>
               <Dialog.Overlay className="fixed inset-0 z-[60] bg-navy-950/70 backdrop-blur-sm" />
-              <Dialog.Content className="fixed right-0 top-0 z-[70] h-full w-[88vw] max-w-sm overflow-y-auto bg-white p-5 shadow-premium">
+              <Dialog.Content className="fixed right-0 top-0 z-[70] h-full w-[90vw] max-w-[26rem] overflow-y-auto bg-white p-5 shadow-premium sm:max-w-[28rem]">
                 <div className="flex items-center justify-between gap-4 border-b border-slate-200 pb-4">
                   <HeaderBrand compact />
                   <Dialog.Close asChild>
@@ -333,7 +338,12 @@ export function MainNavbar() {
                     ["Career Corner", "/blog", BriefcaseBusiness],
                     ["Login", "/login", LogIn]
                   ].map(([label, href, Icon]) => (
-                    <Button key={href as string} asChild variant="outline" className="justify-start">
+                    <Button
+                      key={href as string}
+                      asChild
+                      variant="outline"
+                      className="justify-start rounded-xl border-slate-200 bg-slate-50/70"
+                    >
                       <Link href={href as string} onClick={() => setOpen(false)}>
                         {React.createElement(Icon as typeof GraduationCap, { className: "h-4 w-4" })}
                         {label as string}
@@ -346,7 +356,7 @@ export function MainNavbar() {
                     href="/"
                     onClick={() => setOpen(false)}
                     className={cn(
-                      "flex min-h-11 items-center gap-2 rounded-md px-3 text-sm font-bold text-navy-900 hover:bg-navy-50",
+                      "flex min-h-11 items-center gap-2 rounded-xl px-3 text-sm font-bold text-navy-900 transition hover:bg-navy-50",
                       pathname === "/" && "bg-gold-100"
                     )}
                   >
@@ -359,7 +369,7 @@ export function MainNavbar() {
                         href={item.href}
                         onClick={() => setOpen(false)}
                         className={cn(
-                          "flex min-h-11 items-center rounded-md px-3 text-sm font-bold text-navy-900 hover:bg-navy-50",
+                          "flex min-h-11 items-center rounded-xl px-3 text-sm font-bold text-navy-900 transition hover:bg-navy-50",
                           isActive(pathname, item.href) && "bg-gold-100"
                         )}
                       >
@@ -372,7 +382,7 @@ export function MainNavbar() {
                               key={`${item.label}-${child.href}-${child.label}`}
                               href={child.href}
                               onClick={() => setOpen(false)}
-                              className="flex min-h-10 items-center rounded-md px-3 text-sm text-slate-600 hover:bg-slate-50 hover:text-navy-900"
+                              className="flex min-h-10 items-center rounded-xl px-3 text-sm text-slate-600 transition hover:bg-slate-50 hover:text-navy-900"
                             >
                               {child.label}
                             </Link>
@@ -387,7 +397,7 @@ export function MainNavbar() {
           </Dialog.Root>
         </div>
       </AutoHideHeader>
-      <div className="hidden bg-[#4b0082] lg:block">
+      <div className="hidden bg-[#4b0082] xl:block">
         <div className="container flex h-10 items-center">
           <Link
             href="/"

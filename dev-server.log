@@ -31,3 +31,35 @@
  GET /admission 200 in 907ms
  GET /academics/routine 200 in 65ms
  GET /api/downloads/class-routine 200 in 43ms
+ ✓ Compiled in 5.2s (1872 modules)
+ ✓ Compiled in 4s (1872 modules)
+ ✓ Compiled in 990ms (1872 modules)
+ ✓ Compiled in 921ms (1872 modules)
+ ✓ Compiled in 634ms (1872 modules)
+ ✓ Compiled in 1057ms (1872 modules)
+ GET / 200 in 1012ms
+ ○ Compiling /gallery ...
+ ✓ Compiled /gallery in 2.1s (1913 modules)
+ GET /@vite/client 404 in 2819ms
+ GET /admission/apply 200 in 2488ms
+ GET /gallery 200 in 2483ms
+ GET /notice 200 in 2571ms
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 2.2s (2260 modules)
+ GET /notice/ssc-result-2024-published 500 in 5972ms
+ GET /notice/hsc-admission-2026-apply-now 500 in 5970ms
+ GET /notice/parents-teachers-meeting-may-24 500 in 3424ms
+ GET /admission 200 in 324ms
+ GET /notice/annual-sports-2025 500 in 860ms
+ ○ Compiling /teachers ...
+ ✓ Compiled /teachers in 783ms (2283 modules)
+ GET /teachers 200 in 874ms
+ ✓ Compiled /academics in 480ms (2299 modules)
+ GET /academics 200 in 571ms
+ ○ Compiling /events ...
+ ✓ Compiled /events in 1585ms (2331 modules)
+ GET /events 200 in 4197ms
+ GET / 200 in 3472ms
+ GET /@vite/client 404 in 229ms
+ ✓ Compiled in 2.5s (2159 modules)
+ ✓ Compiled in 773ms (2159 modules)
