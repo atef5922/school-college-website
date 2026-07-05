@@ -122,13 +122,13 @@ export function HeroSection() {
                     initial={{ opacity: 0, y: 18, scaleX: 0.9 }}
                     animate={{ opacity: 1, y: 0, scaleX: 1 }}
                     transition={{ duration: 0.56, delay: 0.08, ease: "easeOut" }}
-                    className="max-w-[calc(100vw-3rem)] border border-white/25 bg-black/50 px-8 py-5 backdrop-blur-[2px] sm:px-12 sm:py-6"
+                    className="max-w-[calc(100vw-3rem)] px-4 py-3 sm:px-8 sm:py-5"
                   >
                     <motion.h1
                       initial={{ opacity: 0, y: 16, filter: "blur(8px)" }}
                       animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                       transition={{ duration: 0.7, delay: 0.18, ease: "easeOut" }}
-                      className="max-w-full break-words font-display text-[2.35rem] font-extrabold leading-tight text-white sm:text-6xl lg:text-7xl"
+                      className="max-w-full break-words font-display text-[2.35rem] font-extrabold leading-tight text-white drop-shadow-[0_4px_18px_rgba(0,0,0,0.62)] sm:text-6xl lg:text-7xl"
                     >
                       {activeSlide.title}
                     </motion.h1>

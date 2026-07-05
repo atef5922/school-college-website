@@ -70,11 +70,21 @@ const config: Config = {
         float: {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-10px)" }
+        },
+        navDropdownIn: {
+          "0%": { opacity: "0", transform: "translateY(-6px) scale(0.98)" },
+          "100%": { opacity: "1", transform: "translateY(0) scale(1)" }
+        },
+        navDropdownOut: {
+          "0%": { opacity: "1", transform: "translateY(0) scale(1)" },
+          "100%": { opacity: "0", transform: "translateY(-4px) scale(0.98)" }
         }
       },
       animation: {
         ticker: "ticker 28s linear infinite",
-        float: "float 6s ease-in-out infinite"
+        float: "float 6s ease-in-out infinite",
+        "nav-dropdown-in": "navDropdownIn 180ms cubic-bezier(0.22, 1, 0.36, 1)",
+        "nav-dropdown-out": "navDropdownOut 120ms ease-in forwards"
       }
     }
   },

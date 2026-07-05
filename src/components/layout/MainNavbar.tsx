@@ -4,7 +4,6 @@ import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import * as Dialog from "@radix-ui/react-dialog";
-import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import {
   BriefcaseBusiness,
   ChevronDown,
@@ -55,7 +54,7 @@ const collegeNav = [
     ]
   },
   {
-    label: "All Clubs of BSC",
+    label: "All Clubs",
     href: "/events",
     items: [
       { label: "Science Club", href: "/events/science-fair-2025" },
@@ -136,50 +135,135 @@ function HeaderBrand({ compact = false }: { compact?: boolean }) {
 
 function DesktopNavItem({
   item,
-  pathname
+  pathname,
+  activeMenu,
+  setActiveMenu
 }: {
   item: (typeof collegeNav)[number];
   pathname: string;
+  activeMenu: string | null;
+  setActiveMenu: React.Dispatch<React.SetStateAction<string | null>>;
 }) {
+  const wrapperRef = React.useRef<HTMLDivElement | null>(null);
+  const closeTimer = React.useRef<number | null>(null);
+  const animationTimer = React.useRef<number | null>(null);
+  const isOpen = activeMenu === item.label;
+  const [mounted, setMounted] = React.useState(false);
+  const [closing, setClosing] = React.useState(false);
+
+  const clearCloseTimer = React.useCallback(() => {
+    if (closeTimer.current) {
+      window.clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+  }, []);
+
+  const showMenu = React.useCallback(() => {
+    clearCloseTimer();
+    setActiveMenu(item.label);
+  }, [clearCloseTimer, item.label, setActiveMenu]);
+
+  const hideMenu = React.useCallback(() => {
+    clearCloseTimer();
+    closeTimer.current = window.setTimeout(() => {
+      setActiveMenu((current) => (current === item.label ? null : current));
+      closeTimer.current = null;
+    }, 180);
+  }, [clearCloseTimer, item.label, setActiveMenu]);
+
+  React.useEffect(() => {
+    if (isOpen) {
+      if (animationTimer.current) {
+        window.clearTimeout(animationTimer.current);
+        animationTimer.current = null;
+      }
+      setMounted(true);
+      setClosing(false);
+      return;
+    }
+
+    if (!mounted) return;
+
+    setClosing(true);
+    animationTimer.current = window.setTimeout(() => {
+      setMounted(false);
+      setClosing(false);
+      animationTimer.current = null;
+    }, 130);
+  }, [isOpen, mounted]);
+
+  React.useEffect(() => {
+    return () => {
+      clearCloseTimer();
+      if (animationTimer.current) {
+        window.clearTimeout(animationTimer.current);
+      }
+    };
+  }, [clearCloseTimer]);
+
   if ("items" in item && item.items) {
     return (
-      <DropdownMenu.Root>
-        <DropdownMenu.Trigger asChild>
-          <button
-            type="button"
-            className={cn(
-              "group inline-flex h-10 items-center gap-1 px-3 text-sm font-bold text-white outline-none transition hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-white/70",
-              isActive(pathname, item.href) && "bg-white/10"
-            )}
-          >
-            {item.label}
-            <ChevronDown className="h-3.5 w-3.5 transition group-data-[state=open]:rotate-180" />
-          </button>
-        </DropdownMenu.Trigger>
-        <DropdownMenu.Content
-          align="start"
-          className="z-50 min-w-56 rounded-md border border-slate-200 bg-white p-2 text-slate-900 shadow-premium"
+      <div
+        ref={wrapperRef}
+        className="relative flex h-10 items-center"
+        onPointerEnter={showMenu}
+        onPointerLeave={hideMenu}
+        onFocus={showMenu}
+        onBlur={(event) => {
+          if (!wrapperRef.current?.contains(event.relatedTarget)) {
+            hideMenu();
+          }
+        }}
+        onKeyDown={(event) => {
+          if (event.key === "Escape") {
+            clearCloseTimer();
+            setActiveMenu(null);
+          }
+        }}
+      >
+        <button
+          type="button"
+          aria-expanded={isOpen}
+          aria-haspopup="menu"
+          className={cn(
+            "group inline-flex h-10 items-center gap-1 whitespace-nowrap px-1.5 text-[12px] font-bold text-white outline-none transition duration-200 hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-white/70 xl:px-2 xl:text-[13px] 2xl:px-3 2xl:text-sm",
+            (isActive(pathname, item.href) || isOpen) && "bg-white/10"
+          )}
         >
-          <DropdownMenu.Item asChild>
-            <Link
-              href={item.href}
-              className="block rounded-md px-3 py-2 text-sm font-bold text-navy-900 outline-none hover:bg-navy-50"
+          {item.label}
+          <ChevronDown className={cn("h-3.5 w-3.5 transition duration-200", isOpen && "rotate-180")} />
+        </button>
+        {mounted ? (
+          <div className="absolute left-0 top-full z-50 min-w-60 pt-2">
+            <div
+              role="menu"
+              aria-label={item.label}
+              className={cn(
+                "rounded-md border border-slate-200/80 bg-white p-2 text-slate-900 shadow-premium outline-none will-change-[transform,opacity]",
+                closing ? "animate-nav-dropdown-out" : "animate-nav-dropdown-in"
+              )}
             >
-              {item.label}
-            </Link>
-          </DropdownMenu.Item>
-          {item.items.map((child) => (
-            <DropdownMenu.Item key={`${item.label}-${child.href}-${child.label}`} asChild>
               <Link
-                href={child.href}
-                className="block rounded-md px-3 py-2 text-sm text-slate-700 outline-none hover:bg-navy-50 hover:text-navy-900"
+                href={item.href}
+                role="menuitem"
+                className="block rounded-md px-3 py-2 text-sm font-bold text-navy-900 outline-none transition hover:bg-navy-50 focus:bg-navy-50"
               >
-                {child.label}
+                {item.label}
               </Link>
-            </DropdownMenu.Item>
-          ))}
-        </DropdownMenu.Content>
-      </DropdownMenu.Root>
+              {item.items.map((child) => (
+                <Link
+                  key={`${item.label}-${child.href}-${child.label}`}
+                  href={child.href}
+                  role="menuitem"
+                  className="block rounded-md px-3 py-2 text-sm text-slate-700 outline-none transition hover:bg-navy-50 hover:text-navy-900 focus:bg-navy-50 focus:text-navy-900"
+                >
+                  {child.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        ) : null}
+      </div>
     );
   }
 
@@ -187,7 +271,7 @@ function DesktopNavItem({
     <Link
       href={item.href}
       className={cn(
-        "inline-flex h-10 items-center px-3 text-sm font-bold text-white transition hover:bg-white/10",
+        "inline-flex h-10 items-center whitespace-nowrap px-1.5 text-[12px] font-bold text-white transition hover:bg-white/10 xl:px-2 xl:text-[13px] 2xl:px-3 2xl:text-sm",
         isActive(pathname, item.href) && "bg-white/10"
       )}
     >
@@ -199,6 +283,7 @@ function DesktopNavItem({
 export function MainNavbar() {
   const pathname = usePathname();
   const [open, setOpen] = React.useState(false);
+  const [activeDesktopMenu, setActiveDesktopMenu] = React.useState<string | null>(null);
 
   return (
     <div className="border-b border-slate-200 bg-white shadow-sm">
@@ -314,9 +399,15 @@ export function MainNavbar() {
           >
             <Home className="h-5 w-5 fill-white" />
           </Link>
-          <nav className="flex min-w-0 flex-1 items-center justify-between" aria-label="Main navigation">
+          <nav className="flex min-w-0 flex-1 items-center justify-between gap-0.5 xl:gap-1" aria-label="Main navigation">
             {collegeNav.map((item) => (
-              <DesktopNavItem key={item.label} item={item} pathname={pathname} />
+              <DesktopNavItem
+                key={item.label}
+                item={item}
+                pathname={pathname}
+                activeMenu={activeDesktopMenu}
+                setActiveMenu={setActiveDesktopMenu}
+              />
             ))}
           </nav>
         </div>

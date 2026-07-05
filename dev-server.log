@@ -1,12 +1,18 @@
 
 > bright-school-college@1.0.0 dev
-> next dev --port 3020
+> next dev --port 3000
 
    ▲ Next.js 15.5.19
-   - Local:        http://localhost:3020
-   - Network:      http://192.168.68.84:3020
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.68.87:3000
 
  ✓ Starting...
- ✓ Ready in 2.6s
- ○ Compiling /about/governing-body ...
- ✓ Compiled /about/governing-body in 3.9s (974 modules)
+ ✓ Ready in 2.5s
+ ○ Compiling / ...
+ ✓ Compiled / in 9.6s (1911 modules)
+ GET / 200 in 11304ms
+ ✓ Compiled in 1846ms (814 modules)
+ ○ Compiling /library ...
+ ✓ Compiled /library in 1919ms (1866 modules)
+ GET /library 200 in 2490ms
+ GET / 200 in 776ms
