@@ -7,12 +7,13 @@
    - Network:      http://192.168.68.87:3000
 
  ✓ Starting...
- ✓ Ready in 2.5s
+ ✓ Ready in 2.6s
  ○ Compiling / ...
- ✓ Compiled / in 9.6s (1911 modules)
- GET / 200 in 11304ms
- ✓ Compiled in 1846ms (814 modules)
+ ✓ Compiled / in 9s (1911 modules)
+ GET / 200 in 10151ms
+ ✓ Compiled in 1732ms (814 modules)
  ○ Compiling /library ...
- ✓ Compiled /library in 1919ms (1866 modules)
- GET /library 200 in 2490ms
- GET / 200 in 776ms
+ ✓ Compiled /library in 1112ms (1866 modules)
+ GET /library 200 in 1584ms
+ GET / 200 in 1574ms
+ GET / 200 in 633ms

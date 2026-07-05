@@ -23,7 +23,7 @@ const actionStyles = [
 
 export function QuickActionCards() {
   return (
-    <section className="relative z-20 -mt-14 bg-transparent pb-4">
+    <section className="relative z-20 -mt-14 hidden bg-transparent pb-4 sm:block">
       <Container>
         <div className="grid items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
           {quickActions.map((action, index) => {

@@ -111,20 +111,20 @@ function isActive(pathname: string, href: string) {
 
 function HeaderBrand({ compact = false }: { compact?: boolean }) {
   return (
-    <Link href="/" className="flex min-w-0 items-center gap-2.5 sm:gap-3" aria-label={`${siteInfo.name} home`}>
-      <div className="relative grid h-14 w-14 flex-none place-items-center rounded-full border-[3px] border-red-600 bg-white shadow-soft sm:h-16 sm:w-16">
+    <Link href="/" className="flex min-w-0 flex-1 items-center gap-2.5 sm:gap-3" aria-label={`${siteInfo.name} home`}>
+      <div className="relative grid h-12 w-12 flex-none place-items-center rounded-full border-[3px] border-red-600 bg-white shadow-soft sm:h-16 sm:w-16">
         <div className="absolute inset-1 rounded-full border-2 border-green-600" />
-        <div className="relative grid h-9 w-9 place-items-center rounded-full bg-navy-900 text-gold-500 sm:h-10 sm:w-10">
-          <ShieldCheck className="h-5 w-5" />
+        <div className="relative grid h-8 w-8 place-items-center rounded-full bg-navy-900 text-gold-500 sm:h-10 sm:w-10">
+          <ShieldCheck className="h-[18px] w-[18px] sm:h-5 sm:w-5" />
           <Star className="absolute -right-1 -top-1 h-3.5 w-3.5 fill-red-600 text-red-600" />
         </div>
       </div>
       {!compact ? (
         <div className="min-w-0">
-          <p className="truncate font-display text-2xl font-extrabold leading-tight text-[#1437c5] sm:text-3xl">
+          <p className="max-w-[15rem] text-pretty font-display text-[1.08rem] font-extrabold leading-[1.08] text-[#1437c5] min-[390px]:max-w-[17rem] min-[390px]:text-[1.18rem] sm:max-w-none sm:text-3xl">
             {siteInfo.name}
           </p>
-          <p className="mt-1 text-sm font-extrabold leading-none text-green-800 sm:text-lg">
+          <p className="mt-1 text-[11px] font-extrabold leading-tight text-green-800 min-[390px]:text-xs sm:text-lg">
             Education | Discipline | Morality
           </p>
         </div>
@@ -288,7 +288,7 @@ export function MainNavbar() {
   return (
     <div className="border-b border-slate-200 bg-white shadow-sm">
       <AutoHideHeader>
-        <div className="container flex min-h-[82px] items-center justify-between gap-4 py-2">
+        <div className="container flex min-h-[76px] items-center justify-between gap-3 py-2 sm:min-h-[82px] sm:gap-4">
           <HeaderBrand />
           <div className="hidden flex-none items-center gap-3 md:flex">
             <Button asChild className="rounded-full bg-sky-500 px-5 text-white shadow-lg shadow-sky-500/25 hover:bg-sky-600">
